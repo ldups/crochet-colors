@@ -5,14 +5,15 @@ const ColorsContext = createContext();
 
 function Provider({children}){
     const [colors, setColors] = useState([]);
-    const [colorCombos, setColorCombos] = useState([]);
+    //const [colorCombos, setColorCombos] = useState([]);
+    const [selectedColor, setSelectedColor] = useState({});
     
     const fetchColors = useCallback(async () => {
-        const response = await axios.get();
+        const response = await axios.get('http://localhost:3001/colors');
         setColors(response.data);},
-        [])
+        []);
     
-    const addColor = async (name, hex) => {
+    /*const addColor = async (name, hex) => {
         const response = await axios.post( , {name, hex});
         const updatedColors = [
             ...colors,
@@ -51,18 +52,24 @@ function Provider({children}){
             return colorCombo.id !== id;
         });
         setColors(updatedColorCombos);
-    };
+    };*/
+
+    const selectColor = (color) =>{
+        setSelectedColor(color);
+    }
 
 
     const vals ={
         colors, 
         fetchColors,
-        addColor,
-        deleteColorByID,
-        colorCombos, 
-        fetchColorCombos,
-        addColorCombo,
-        deleteColorComboByID
+        selectedColor,
+        selectColor,
+        //addColor,
+        //deleteColorByID,
+        //colorCombos, 
+        //fetchColorCombos,
+        //addColorCombo,
+        //deleteColorComboByID
     };
 
     return <ColorsContext.Provider value={vals}>
