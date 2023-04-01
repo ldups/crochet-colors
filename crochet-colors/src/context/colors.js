@@ -77,8 +77,18 @@ function Provider({children}){
                 response.data
             ];
             setColorCombos(updatedColorCombos);
+
+            const updatedColors = colors.map((color) => {
+                return {
+                    ...color,
+                    rank:""
+                }
+            });
+            setColors(updatedColors);
+            
             alert("Color combination successfully added.");
         }
+        
     };
 
     const deleteColorComboByID = async (id) =>{
@@ -99,6 +109,25 @@ function Provider({children}){
         setSelectedColor(updatedSelectedColor);
     }
 
+    const changeColorRank = (color, rank) => {
+        const updatedColors = colors.map((c) => {
+            if (color.name === c.name){
+                return {
+                    ...c,
+                    rank
+                }
+            }
+            else if (rank === c.rank){
+                return {
+                    ...c,
+                    rank:""
+                }
+            }
+            return c;
+        })
+        setColors(updatedColors);
+    }
+
 
     const vals ={
         colors, 
@@ -110,6 +139,7 @@ function Provider({children}){
         colorCombos, 
         fetchColorCombos,
         addColorCombo,
+        changeColorRank
         //deleteColorComboByID
     };
 

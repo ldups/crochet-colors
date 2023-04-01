@@ -4,6 +4,10 @@ import ColorSelect from "./ColorSelect";
 function ColorSelectList(){
     const {colors, addColorCombo} = useColorsContext();
 
+    const gridStyle = {
+        columnCount: 3,
+    }
+
     const renderedColors = colors.map((color) =>{
         return <ColorSelect color={color} key={color.id}/>
     })
@@ -13,7 +17,7 @@ function ColorSelectList(){
     }
 
     return <div>
-        {renderedColors}
+        <div style={gridStyle}>{renderedColors}</div>
         <button onClick={handleSubmit} className='submit-button'>submit combo</button>
     </div>
 }

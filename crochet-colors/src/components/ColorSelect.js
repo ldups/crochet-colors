@@ -1,16 +1,18 @@
 import useColorsContext from "../hooks/use-colors-context";
 
 function ColorSelect({color}){
-    const {selectColor, colorCombos} = useColorsContext();
+    const {selectColor, colorCombos, changeColorRank} = useColorsContext();
 
     const textStyle ={
-        color: color.hex,
+        color: 'black',
         fontSize: '20px',
+        marginRight: '10px',
     }
     const blockStyle ={
         backgroundColor: color.hex,
         width: '20px',
         height: '20px',
+        marginRight: '10px',
     }
 
     const containerStyle = {
@@ -20,6 +22,7 @@ function ColorSelect({color}){
     const onChange = (event) => {
         if (event.target.value !== ""){
             selectColor(color, event.target.value);
+            changeColorRank(color, event.target.value);
         }
         
     }
@@ -34,22 +37,20 @@ function ColorSelect({color}){
         return numCombos;
     }
 
-    return <div >
+    return <div className='color-select'>
         <div style={containerStyle}>
             <div style={blockStyle}> </div>
             <div style={textStyle}> {color.name} ({calcNumUsingColor()}) </div>
+            <form>
+                <select name={color.name} onChange={onChange} value={color.rank}>
+                    <option value=""></option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </form>
         </div>
-        
-        <form>
-            <select name={color.name} onChange={onChange}>
-                <option value=""></option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </form>
-        
     </div>
 }
 export default ColorSelect;

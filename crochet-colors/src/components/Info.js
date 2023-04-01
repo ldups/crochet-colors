@@ -29,18 +29,24 @@ function Info(){
             return permutation;
         }
 
-        const isSelectedCombinationPresent = () => {
-            let combination = false;
+        const calcNumSelectedCombinationsPresent = () => {
+            let numCombos = 0;
             colorCombos.forEach((combo) => {
                 if (areColorCombosPermutations(combo, selectedColor)){
-                    combination = true;
+                    numCombos ++ ;
                 }
             })
-            return combination;
+            return numCombos;
         }
 
-        if (isSelectedCombinationPresent()){
-           setCombinationContent(<div>At least 1 combination with these colors already exists.</div>);
+        const numCombos = calcNumSelectedCombinationsPresent();
+        if (numCombos > 0){
+            if (numCombos === 1){
+                setCombinationContent(<div>1 combination with these colors already exists.</div>);
+            }
+            else{
+                setCombinationContent(<div>{numCombos} combinations with these colors already exist.</div>);
+            }
         }
         else{
             setCombinationContent(<div>Unique combination.</div>)
@@ -53,9 +59,12 @@ function Info(){
         }
     }, [selectedColor, colorCombos]);
 
+    const style = {
+        fontSize: '25px',
+    }
     
 
-    return <div>
+    return <div style={style}>
         {combinationContent}
         {permutationContent}
         Number of combinations already entered: {colorCombos.length}

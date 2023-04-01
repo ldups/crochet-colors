@@ -12,12 +12,14 @@ function App(){
         fetchColorCombos();
     }, [fetchColors, fetchColorCombos]);
 
-    return <div>
-        <h1>Crochet Colors</h1>
-        <div className='container'></div>
-        <div className='hexagons'><Hexagons/></div>
-        <div className='color-select-list'><ColorSelectList/></div>
-        <div className='info-panel'><Info/></div>
+    return <div className='app'>
+        <h1 className="title">Crochet Colors</h1>
+        <div className='container'>
+            <div className='hexagons'><Hexagons/></div>
+            <div className='color-select-list'><ColorSelectList/></div>
+            <div className='info-panel'><Info/></div>
+        </div>
+        
     </div>;
 };
 
