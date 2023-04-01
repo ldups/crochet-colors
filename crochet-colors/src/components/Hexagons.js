@@ -1,9 +1,13 @@
+import useColorsContext from "../hooks/use-colors-context";
+
 function Hexagons(){
-    const colors = ['red', 'yellow', 'blue', 'green', 'pink'];
+    const {selectedColor} = useColorsContext();
     
-    return <svg>
-        <polygon points="150,75 112.5,140 37.5,140 0,75 37.5,10 112.5,10" stroke="black" fill={colors[0]}/>
-        <polygon points="125,75 103.125,26.25 46.875,26.25 25,75 46.875,123.75 103.125, 123.75" stroke="black" fill={colors[1]}/>
+    return <svg viewBox="0 0 400 400" width="400" height="400">
+        <circle cx="200" cy="200" r="160" fill={selectedColor[3].hex} stroke="black" stroke-width="2" />
+        <circle cx="200" cy="200" r="120" fill={selectedColor[2].hex} stroke="black" stroke-width="2" />
+        <circle cx="200" cy="200" r="80" fill={selectedColor[1].hex} stroke="black" stroke-width="2" />
+        <circle cx="200" cy="200" r="40" fill={selectedColor[0].hex} stroke="black" stroke-width="2" />
         
     </svg>
 }

@@ -5,8 +5,25 @@ const ColorsContext = createContext();
 
 function Provider({children}){
     const [colors, setColors] = useState([]);
-    //const [colorCombos, setColorCombos] = useState([]);
-    const [selectedColor, setSelectedColor] = useState({});
+    const [colorCombos, setColorCombos] = useState([]);
+    const [selectedColor, setSelectedColor] = useState({
+        0:{
+            name:'default',
+            hex:'#FFFFFF'
+        }, 
+        1: {
+            name:'default',
+            hex:'#FFFFFF'
+        },
+        2: {
+            name:'default',
+            hex:'#FFFFFF'
+        }, 
+        3: {
+            name:'default',
+            hex:'#FFFFFF'
+        }
+    });
     
     const fetchColors = useCallback(async () => {
         const response = await axios.get('http://localhost:3001/colors');
@@ -29,20 +46,39 @@ function Provider({children}){
             return color.id !== id;
         });
         setColors(updatedColors);
-    };
+    };*/
 
     const fetchColorCombos = useCallback(async () => {
-        const response = await axios.get();
+        const response = await axios.get('http://localhost:3001/colorCombos');
         setColorCombos(response.data);},
         [])
+
+    const areColorCombosEqual = (combo1, combo2) => {
+        return combo1[0].name === combo2[0].name && combo1[1].name === combo2[1].name && combo1[2].name === combo2[2].name
+         && combo1[3].name === combo2[3].name;
+    }
     
-    const addColorCombo = async (color1, color2, color3, color4) => {
-        const response = await axios.post( , {color1, color2, color3, color4});
-        const updatedColorCombos = [
-            ...colorCombos,
-            response.data
-        ];
-        setColorCombos(updatedColors);
+    const addColorCombo = async () => {
+        var uniqueCombo = true;
+        colorCombos.map((combo) => {
+            if (areColorCombosEqual(combo, selectedColor)){
+                alert("Color combination already in list.");
+                uniqueCombo = false;
+            }
+        })
+        var allColorsSelected = selectedColor[0].name !== 'default' && selectedColor[1].name !== 'default' && selectedColor[2].name !== 'default' && selectedColor[3].name !== 'default';
+        if (!allColorsSelected){
+            alert("Not all colors selected. Unable to submit combo.");
+        }
+        if (uniqueCombo && allColorsSelected){
+            const response = await axios.post('http://localhost:3001/colorCombos', selectedColor);
+            const updatedColorCombos = [
+                ...colorCombos,
+                response.data
+            ];
+            setColorCombos(updatedColorCombos);
+            alert("Color combination successfully added.");
+        }
     };
 
     const deleteColorComboByID = async (id) =>{
@@ -52,10 +88,15 @@ function Provider({children}){
             return colorCombo.id !== id;
         });
         setColors(updatedColorCombos);
-    };*/
+    };
 
-    const selectColor = (color) =>{
-        setSelectedColor(color);
+    const selectColor = (color, num) =>{
+        const updatedSelectedColor = {
+            ...selectedColor,
+          };
+        updatedSelectedColor[num] = color;
+        
+        setSelectedColor(updatedSelectedColor);
     }
 
 
@@ -66,9 +107,9 @@ function Provider({children}){
         selectColor,
         //addColor,
         //deleteColorByID,
-        //colorCombos, 
-        //fetchColorCombos,
-        //addColorCombo,
+        colorCombos, 
+        fetchColorCombos,
+        addColorCombo,
         //deleteColorComboByID
     };
 
