@@ -1,58 +1,187 @@
 {
   "colors": [
-    {"name":"yellow",
-      "hex": "#ece47a"},
-    {"name": "hot pink",
-      "hex": "#c6407c"},
-    {"name": "hot purple",
-      "hex": "#7b6984"},
-    {"name": "tangerine",
-    "hex": "#e65a55"},
-    {"name": "hot green",
-    "hex": "#b9cf56"},
-    {"name": "red",
-    "hex": "#972025"},
-    {"name": "soft ecru",
-    "hex": "#f1e4ce"},
-    {"name": "overcast",
-    "hex": "#867e77"},
-    {"name": "indigo",
-    "hex": "#212631"},
-    {"name": "dazzle blue",
-    "hex": "#1b2e69"},
-    {"name": "beach glass",
-    "hex": "#9ac2c1"},
-    {"name": "mod green",
-    "hex": "#187f54"},
-    {"name": "white",
-    "hex": "#e8e8f7"},
-    {"name": "black",
-    "hex": "#18171a"},
-    {"name": "tea rose",
-    "hex": "#e8e8f7"},
-    {"name": "jute",
-    "hex": "#b49b86"},
-    {"name": "wine",
-    "hex": "#af7486"},
-    {"name": "black currant",
-    "hex": "#5e366b"},
-    {"name": "stonewash",
-    "hex": "#7e7e7e"},
-    {"name": "light blue",
-    "hex": "#90b5db"},
-    {"name": "hot blue",
-    "hex": "#4686b2"},
-    {"name": "warm brown",
-    "hex": "#352420"},
-    {"name": "teal",
-    "hex": "#2f747d"},
-    {"name": "seabreeze",
-    "hex": "#6ab7af"},
-    {"name": "hot orange",
-    "hex": "#f67835"},
-    {"name": "sage green",
-    "hex": "#526042"},
-    {"name": "dark pine",
-    "hex": "#80a089"}
+    {
+      "name": "yellow",
+      "hex": "#ece47a",
+      "rank": ""
+    },
+    {
+      "name": "hot pink",
+      "hex": "#c6407c",
+      "rank": ""
+    },
+    {
+      "name": "hot purple",
+      "hex": "#7b6984",
+      "rank": ""
+    },
+    {
+      "name": "tangerine",
+      "hex": "#e65a55",
+      "rank": ""
+    },
+    {
+      "name": "hot green",
+      "hex": "#b9cf56",
+      "rank": ""
+    },
+    {
+      "name": "red",
+      "hex": "#972025",
+      "rank": ""
+    },
+    {
+      "name": "soft ecru",
+      "hex": "#f1e4ce",
+      "rank": ""
+    },
+    {
+      "name": "overcast",
+      "hex": "#867e77",
+      "rank": ""
+    },
+    {
+      "name": "indigo",
+      "hex": "#212631",
+      "rank": ""
+    },
+    {
+      "name": "dazzle blue",
+      "hex": "#1b2e69",
+      "rank": ""
+    },
+    {
+      "name": "beach glass",
+      "hex": "#9ac2c1",
+      "rank": ""
+    },
+    {
+      "name": "mod green",
+      "hex": "#187f54",
+      "rank": ""
+    },
+    {
+      "name": "white",
+      "hex": "#e8e8f7",
+      "rank": ""
+    },
+    {
+      "name": "black",
+      "hex": "#18171a",
+      "rank": ""
+    },
+    {
+      "name": "tea rose",
+      "hex": "#e8e8f7",
+      "rank": ""
+    },
+    {
+      "name": "jute",
+      "hex": "#b49b86",
+      "rank": ""
+    },
+    {
+      "name": "wine",
+      "hex": "#af7486",
+      "rank": ""
+    },
+    {
+      "name": "black currant",
+      "hex": "#5e366b",
+      "rank": ""
+    },
+    {
+      "name": "stonewash",
+      "hex": "#7e7e7e",
+      "rank": ""
+    },
+    {
+      "name": "light blue",
+      "hex": "#90b5db",
+      "rank": ""
+    },
+    {
+      "name": "hot blue",
+      "hex": "#4686b2",
+      "rank": ""
+    },
+    {
+      "name": "warm brown",
+      "hex": "#352420",
+      "rank": ""
+    },
+    {
+      "name": "teal",
+      "hex": "#2f747d",
+      "rank": ""
+    },
+    {
+      "name": "seabreeze",
+      "hex": "#6ab7af",
+      "rank": ""
+    },
+    {
+      "name": "hot orange",
+      "hex": "#f67835",
+      "rank": ""
+    },
+    {
+      "name": "sage green",
+      "hex": "#526042",
+      "rank": ""
+    },
+    {
+      "name": "dark pine",
+      "hex": "#80a089",
+      "rank": ""
+    }
+  ],
+  "colorCombos": [
+    {
+      "0": {
+        "name": "soft ecru",
+        "hex": "#f1e4ce",
+        "rank": ""
+      },
+      "1": {
+        "name": "mod green",
+        "hex": "#187f54",
+        "rank": ""
+      },
+      "2": {
+        "name": "warm brown",
+        "hex": "#352420",
+        "rank": ""
+      },
+      "3": {
+        "name": "hot green",
+        "hex": "#b9cf56",
+        "rank": ""
+      },
+      "id": 1
+    },
+    {
+      "0": {
+        "name": "jute",
+        "hex": "#b49b86",
+        "rank": ""
+      },
+      "1": {
+        "name": "hot blue",
+        "hex": "#4686b2",
+        "rank": ""
+      },
+      "2": {
+        "name": "hot pink",
+        "hex": "#c6407c",
+        "rank": ""
+      },
+      "3": {
+        "name": "hot green",
+        "hex": "#b9cf56",
+        "rank": ""
+      },
+      "id": 2
+    }
   ]
 }
