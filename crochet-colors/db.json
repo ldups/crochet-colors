@@ -134,54 +134,64 @@
       "name": "dark pine",
       "hex": "#80a089",
       "rank": ""
+    },
+    {
+      "name": "ecru",
+      "hex": "#e5dddc",
+      "rank": ""
+    },
+    {
+      "name": "rose pink",
+      "hex": "#f0889a",
+      "rank": ""
+    },
+    {
+      "name": "robin's egg",
+      "hex": "#b2ded3",
+      "rank": ""
+    },
+    {
+      "name": "soft violet",
+      "hex": "#ba93bc",
+      "rank": ""
+    },
+    {
+      "name": "sunshine",
+      "hex": "#e5d215",
+      "rank": ""
+    },
+    {
+      "name": "blue jeans",
+      "hex": "#617397",
+      "rank": ""
+    },
+    {
+      "name": "blueberry",
+      "hex": "#6f9cdf",
+      "rank": ""
+    },
+    {
+      "name": "bright navy",
+      "hex": "#10121b",
+      "rank": ""
+    },
+    {
+      "name": "grape",
+      "hex": "#725e99",
+      "rank": ""
+    },
+    {
+      "name": "meadow",
+      "hex": "#718255",
+      "rank": ""
+    },
+    {
+      "name": "orchid",
+      "hex": "#e0b7d3",
+      "rank": ""
     }
   ],
   "colorCombos": [
-    {
-      "0": {
-        "name": "soft ecru",
-        "hex": "#f1e4ce",
-        "rank": ""
-      },
-      "1": {
-        "name": "mod green",
-        "hex": "#187f54",
-        "rank": ""
-      },
-      "2": {
-        "name": "warm brown",
-        "hex": "#352420",
-        "rank": ""
-      },
-      "3": {
-        "name": "hot green",
-        "hex": "#b9cf56",
-        "rank": ""
-      },
-      "id": 1
-    },
-    {
-      "0": {
-        "name": "jute",
-        "hex": "#b49b86",
-        "rank": ""
-      },
-      "1": {
-        "name": "hot blue",
-        "hex": "#4686b2",
-        "rank": ""
-      },
-      "2": {
-        "name": "hot pink",
-        "hex": "#c6407c",
-        "rank": ""
-      },
-      "3": {
-        "name": "hot green",
-        "hex": "#b9cf56",
-        "rank": ""
-      },
-      "id": 2
-    }
+    
   ]
 }
