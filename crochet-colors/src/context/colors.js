@@ -60,7 +60,7 @@ function Provider({children}){
     
     const addColorCombo = async () => {
         var uniqueCombo = true;
-        colorCombos.map((combo) => {
+        colorCombos.forEach((combo) => {
             if (areColorCombosEqual(combo, selectedColor)){
                 alert("Color combination already in list.");
                 uniqueCombo = false;
@@ -85,6 +85,26 @@ function Provider({children}){
                 }
             });
             setColors(updatedColors);
+
+            const updatedSelectedColor = {
+                0:{
+                    name:'default',
+                    hex:'#FFFFFF'
+                }, 
+                1: {
+                    name:'default',
+                    hex:'#FFFFFF'
+                },
+                2: {
+                    name:'default',
+                    hex:'#FFFFFF'
+                }, 
+                3: {
+                    name:'default',
+                    hex:'#FFFFFF'
+                }
+            };
+            setSelectedColor(updatedSelectedColor);
             
             alert("Color combination successfully added.");
         }
@@ -92,12 +112,23 @@ function Provider({children}){
     };
 
     const deleteColorComboByID = async (id) =>{
-        const response = await axios.delete();
+        const response = await axios.delete(`http://localhost:3001/colorCombos/${id}`);
 
         const updatedColorCombos = colorCombos.filter((colorCombo) => {
             return colorCombo.id !== id;
         });
-        setColors(updatedColorCombos);
+        setColorCombos(updatedColorCombos);
+    };
+
+    const deleteAllColorCombos = async () =>{
+        colorCombos.forEach(async (combo) => {
+            const id = combo.id;
+            const response = await axios.delete(`http://localhost:3001/colorCombos/${id}`);
+        })
+        
+
+        const updatedColorCombos = [];
+        setColorCombos(updatedColorCombos);
     };
 
     const selectColor = (color, num) =>{
@@ -139,8 +170,9 @@ function Provider({children}){
         colorCombos, 
         fetchColorCombos,
         addColorCombo,
-        changeColorRank
-        //deleteColorComboByID
+        changeColorRank,
+        deleteAllColorCombos,
+        deleteColorComboByID
     };
 
     return <ColorsContext.Provider value={vals}>
